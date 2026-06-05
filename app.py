@@ -221,18 +221,18 @@ def generate_gemini_response(api_key: str, messages: List[Dict[str, Any]], user_
 inject_custom_styles()
 initialize_state()
 
-# Sidebar control panel for key, focus mode, and progress tracking.
+# Load Gemini API key from Streamlit secrets for secure, automatic initialization.
+if "GEMINI_API_KEY" in st.secrets:
+    gemini_key = st.secrets["GEMINI_API_KEY"]
+    st.session_state.api_key = gemini_key
+else:
+    gemini_key = None
+    st.session_state.api_key = ""
+
+# Sidebar control panel for focus mode and progress tracking.
 with st.sidebar:
     st.markdown("## Configuration Dashboard")
-    st.caption("Control the assistant persona, intent, and readiness status.")
-
-    gemini_key = st.text_input(
-        "Paste Gemini API Key:",
-        type="default",
-        placeholder="Paste your Gemini API key here",
-        help="Stored only in your browser session state for this app run.",
-    )
-    st.session_state.api_key = gemini_key
+    st.caption("Control your prep focus, readiness status, and chat history.")
 
     st.session_state.category = st.selectbox(
         "Focus Area Mode",
@@ -306,8 +306,8 @@ if user_query:
         st.markdown(user_query)
 
     if not st.session_state.api_key.strip():
-        # Keep the UX gentle when no Gemini key is configured.
-        reminder = "Please add your Gemini API key in the sidebar to start generating AI responses."
+        # Keep the UX gentle when no Gemini key is configured in secrets.
+        reminder = "⚙️ No API key found. Please set GEMINI_API_KEY in Streamlit secrets (see README for setup)."
         st.session_state.messages.append({"role": "assistant", "content": reminder})
         with st.chat_message("assistant"):
             st.info(reminder)

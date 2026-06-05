@@ -74,46 +74,57 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### Step 4: Fire It Up!
+### Step 4: Set Up Your API Key (Securely! 🔐)
+
+The app reads your Gemini API key from Streamlit secrets – a secure, encrypted way to store sensitive info. Here's how:
+
+1. Create a file called `secrets.toml` in the `.streamlit` folder (we've included a template):
+
+   ```
+   .streamlit/secrets.toml
+   ```
+
+2. Open it and add your Gemini API key (get it free from [aistudio.google.com](https://aistudio.google.com)):
+
+   ```toml
+   GEMINI_API_KEY = "your-actual-api-key-here"
+   ```
+
+3. **That's it!** The app automatically reads it when you start Streamlit.
+
+> **Security note:** This file is listed in `.gitignore` so your key will never accidentally get pushed to GitHub. Keep it safe! 🔒
+
+### Step 5: Fire It Up!
 
 ```bash
 streamlit run app.py
 ```
 
-Your app will open at **`http://localhost:8501`** in your browser. 🚀
-
-## Getting Your Gemini API Key (Free!) 🔑
-
-Don't worry, it's literally 2 minutes:
-
-1. Go to [Google AI Studio](https://aistudio.google.com)
-2. Sign in with your Google account
-3. Click **"Get API Key"** → **"Create new secret key"**
-4. Copy that key (it'll look like a long random string)
-5. Paste it into the app's sidebar under **"Paste Gemini API Key:"**
-6. Done! You're ready to go
-
-> **Quick note:** Your API key stays in your browser session only – it's not saved anywhere or sent anywhere except to Google's servers when you chat. You're good. 👍
+Your app will open at **`http://localhost:8501`** in your browser. The API key loads automatically – no need to paste anything! 🚀
 
 ## How to Use It (The Fun Part!)
+
+### Streamlit Secrets – Safe & Secure 🔐
+
+Instead of typing your API key every time, SkillYatra AI reads it securely from Streamlit secrets:
+- Your key is encrypted and stored locally
+- Never gets accidentally pasted in the chat
+- Never gets exposed in browser history
+- `.gitignore` prevents it from being committed to GitHub
+
+**Already set up?** Just run the app and start chatting – your key loads automatically! ✨
 
 ### The Sidebar Controls
 
 **The sidebar is your control panel. Here's what each button does:**
 
-1. **Paste Gemini API Key** – Paste your API key here (grab one from [aistudio.google.com](https://aistudio.google.com) for free)
-
-2. **Focus Area Mode** – What are you prepping for?
+1. **Focus Area Mode** – What are you prepping for?
    - Semester Exam Preparation
    - Placement Drive & Interview Prep
    - Company Switching & Career Growth
 
 3. **Your Syllabus/Prep Completion (%)** – Drag the slider to show how far along you are
-   - The progress bar updates in real-time
-   - Get a warning if you're under 50% (time to hustle!)
-   - Get a celebration if you're over 80% (almost there!)
 
-4. **Wipe Chat History** – Start fresh with a blank slate anytime
 
 ### Asking Questions
 
@@ -158,6 +169,13 @@ Microsoft/
 ```
 
 ## Troubleshooting (When Things Go Sideways 🤔)
+
+### "No API key found" message
+**Probably:** Your `GEMINI_API_KEY` isn't set in `.streamlit/secrets.toml`
+**Fix:** 
+1. Open `.streamlit/secrets.toml`
+2. Add your key: `GEMINI_API_KEY = "your-actual-key-here"`
+3. Restart Streamlit (stop and run `streamlit run app.py` again)
 
 ### "I see a 404 error"
 **Probably:** Your Gemini API key is invalid or your account doesn't have access
