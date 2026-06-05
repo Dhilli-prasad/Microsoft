@@ -1,179 +1,231 @@
-# SkillYatra AI - The Ultimate Career, Placement & Semester Engine
+# SkillYatra AI – Your Personal Career & Placement Mentor 🎓
 
-A production-ready **Streamlit web application** that combines the conversational depth of ChatGPT, the structured clarity of Perplexity, and the intelligence of Google Gemini to help students and professionals with:
+Hey there! 👋
 
-- 📚 **Semester Exam Preparation** – Syllabus tracking, subject breakdowns, and study roadmaps
-- 💼 **Placement Drive & Interview Prep** – Real company round questions, mock interview scenarios, and hiring insights
-- 🚀 **Company Switching & Career Growth** – Career path guidance, skill gaps, and company-specific strategies
+Welcome to **SkillYatra AI** – think of it as your always-available career buddy who's part ChatGPT, part Perplexity, and all Gemini-powered intelligence. Whether you're cramming for semester exams, grinding through placement season, or thinking about switching companies, this app's got your back.
 
-## Features
+## What Can You Use It For?
 
-✨ **AI-Powered Career Mentoring**
-- Real-time conversational AI using Google Gemini 2.5 Flash
-- Context-aware responses based on your preparation focus area and completion status
-- Structured, actionable guidance for career and academic growth
+- **📚 Semester Exams?** Get study plans, subject breakdowns, and exam roadmaps
+- **💼 Placements Coming Up?** Practice real interview questions, mock rounds, and insider hiring tips
+- **🚀 Thinking of Switching Jobs?** Explore career paths, identify skill gaps, and plan your next move
 
-📊 **Smart Preparation Tracker**
-- Real-time syllabus/prep completion slider (0–100%)
-- Visual progress bar with contextual warnings and success banners
-- Focus area mode selection for tailored advice
+Pretty much anything career or academic prep – just ask!
 
-🎨 **Visual Flowchart Diagrams**
-- Automatic Mermaid flowchart generation from AI responses
-- Real-time rendering of career roadmaps, process timelines, and interview question hierarchies
-- Live interactive diagrams embedded directly in the chat
+## What Makes It Special?
 
-💬 **Full Chat History Management**
-- Persistent conversation history during your session
-- One-click "Wipe Chat History" button to start fresh
-- Seamless message rehydration on app rerun
+🧠 **Your AI Mentor Actually Listens**
+- Chatbot that knows what you're preparing for (exams? interviews? career switch?)
+- Gets smarter based on your current prep level (if you're 30% done, it won't throw advanced stuff at you)
+- Gives you real, actionable advice – not generic fluff
 
-🎯 **Premium Dark-Mode Dashboard**
-- Glassmorphism design with smooth gradients and blur effects
-- Developer-friendly, polished UI with smooth interactions
-- Responsive layout optimized for all screen sizes
+📈 **See Your Progress**
+- Slider to track how much of your prep is done (0–100%)
+- Visual progress bar that encourages you
+- Gets warnings if you're behind, celebrations when you're crushing it
 
-## Quick Start
+📊 **Visual Roadmaps That Actually Help**
+- AI auto-generates flowchart diagrams for every process or timeline
+- See career paths, interview rounds, and study schedules as actual diagrams
+- No more imagining – it's all visual and interactive
 
-### Prerequisites
+💾 **Keep Your Conversation Going**
+- Your chat history sticks around during your session
+- One button to clear everything and start fresh
+- Feels like a real conversation, not a transactional chatbot
 
-- **Python 3.10+**
-- **pip** (Python package manager)
-- **Google Gemini API Key** (free tier available at [aistudio.google.com](https://aistudio.google.com))
+🎨 **Dark Mode That Doesn't Hurt Your Eyes**
+- Premium, sleek dashboard design
+- Smooth gradients and blur effects that look modern
+- Works great on any screen size
 
-### Installation
+## Getting Started (It's Easy, Promise!) ⚡
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/Dhilli-prasad/Microsoft.git
-   cd Microsoft
-   ```
+### What You Need First
 
-2. **Create a Python virtual environment**
-   ```bash
-   python -m venv .venv
-   .venv\Scripts\activate  # On Windows
-   source .venv/bin/activate  # On macOS/Linux
-   ```
+- **Python 3.10+** – Grab it from [python.org](https://www.python.org/downloads/) if you don't have it
+- **A Google Gemini API Key** – Free tier available! More on that in a sec
+- **Git** (optional but recommended) – To clone the repo
 
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-### Running the App
-
-```bash
-streamlit run app.py
-```
-
-The app will launch locally at **`http://localhost:8501`**
-
-## Configuration
-
-### Getting Your Gemini API Key
-
-1. Go to [Google AI Studio](https://aistudio.google.com)
-2. Sign in with your Google account
-3. Click **"Get API Key"** → **"Create new secret key"**
-4. Copy the API key
-5. Paste it into the **"Paste Gemini API Key:"** field in the app sidebar
-
-> **Security Note:** Your API key is stored only in your browser session state during the app run. It is never saved to disk or transmitted beyond your local session.
-
-### Sidebar Controls
-
-- **Paste Gemini API Key:** Enter your Google Gemini API key
-- **Focus Area Mode:** Select your preparation focus (Semester Exam, Placement, Company Switching)
-- **Syllabus/Prep Completion (%):** Slider to track your current preparation status
-- **Wipe Chat History:** Clear all messages and start a fresh session
-
-## How It Works
-
-### The AI Brain
-
-SkillYatra AI uses **Google Gemini 2.5 Flash** with a specialized system prompt that enforces:
-
-1. **Expert career mentoring** with concrete, real-world advice
-2. **Automatic Mermaid diagram generation** for every process/roadmap explanation
-3. **Safe flowchart syntax** to prevent rendering errors (proper node labeling, no colons/asterisks)
-4. **Focus-aware responses** that adapt to your selected preparation mode
-
-### Chat Flow
-
-1. **You ask a question** about placement, semester prep, or career growth
-2. **Gemini AI analyzes** your query with context about your preparation status
-3. **The model generates** a structured response + embedded Mermaid flowchart
-4. **SkillYatra extracts** the flowchart and renders it visually beneath the response
-5. **Full message history** is maintained for conversation continuity
-
-## Project Structure
-
-```
-Microsoft/
-├── app.py              # Main Streamlit application (337 lines, fully functional)
-├── requirements.txt    # Python dependencies
-├── README.md           # This file
-└── .git/               # Git version control
-```
-
-## Technologies Used
-
-- **[Streamlit](https://streamlit.io)** – Web app framework
-- **[Google Generative AI](https://ai.google.dev)** – Gemini 2.5 Flash model
-- **[Mermaid.js](https://mermaid.js.org)** – Flowchart rendering
-- **Python 3.10+** – Core language
-
-## API Role Mapping
-
-SkillYatra AI automatically handles Google Gemini API compatibility by mapping internal roles:
-- `user` → `user` (your messages)
-- `assistant` → `model` (AI responses)
-
-This ensures full compatibility with Gemini's API specifications.
-
-## Troubleshooting
-
-### 404 Error on Model Name
-**Solution:** The app uses `gemini-2.5-flash`. If you see errors, ensure your Gemini API key is valid and your account has access to this model.
-
-### Mermaid Diagram Not Rendering
-**Solution:** Check that the AI response includes a valid `\`\`\`mermaid ... \`\`\`` block. The system prompt enforces safe syntax, but ensure no colons or special characters appear inside node labels.
-
-### "Please add your Gemini API key" message
-**Solution:** Paste a valid API key in the sidebar **"Paste Gemini API Key:"** field. Create one at [aistudio.google.com](https://aistudio.google.com) if you don't have one.
-
-### API Authentication Failed
-**Solution:** Verify your API key is correct and your network connection is active. Google's API endpoints must be reachable.
-
-## Contributing
-
-This is a production-ready single-file application. To contribute:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/your-feature`)
-3. Test your changes locally
-4. Commit and push (`git push origin feature/your-feature`)
-5. Open a Pull Request
-
-## License
-
-This project is open-source and available under the MIT License.
-
-## Support & Feedback
-
-- **Issues:** Open an issue on [GitHub](https://github.com/Dhilli-prasad/Microsoft/issues)
-- **Feedback:** Feel free to reach out with suggestions for career guidance features
-
----
-
-**Built with ❤️ for students and professionals aiming to excel in their careers.**
-
-**Get started now:** Clone the repo, add your Gemini API key, and launch the app!
+### Step 1: Get the Code
 
 ```bash
 git clone https://github.com/Dhilli-prasad/Microsoft.git
 cd Microsoft
+```
+
+### Step 2: Set Up Your Python Environment
+
+Think of this like creating a sandbox just for this project (keeps things clean):
+
+```bash
+# Windows
+python -m venv .venv
+.venv\Scripts\activate
+
+# macOS/Linux
+python -m venv .venv
+source .venv/bin/activate
+```
+
+### Step 3: Install What You Need
+
+```bash
 pip install -r requirements.txt
+```
+
+### Step 4: Fire It Up!
+
+```bash
 streamlit run app.py
 ```
+
+Your app will open at **`http://localhost:8501`** in your browser. 🚀
+
+## Getting Your Gemini API Key (Free!) 🔑
+
+Don't worry, it's literally 2 minutes:
+
+1. Go to [Google AI Studio](https://aistudio.google.com)
+2. Sign in with your Google account
+3. Click **"Get API Key"** → **"Create new secret key"**
+4. Copy that key (it'll look like a long random string)
+5. Paste it into the app's sidebar under **"Paste Gemini API Key:"**
+6. Done! You're ready to go
+
+> **Quick note:** Your API key stays in your browser session only – it's not saved anywhere or sent anywhere except to Google's servers when you chat. You're good. 👍
+
+## How to Use It (The Fun Part!)
+
+### The Sidebar Controls
+
+**The sidebar is your control panel. Here's what each button does:**
+
+1. **Paste Gemini API Key** – Paste your API key here (grab one from [aistudio.google.com](https://aistudio.google.com) for free)
+
+2. **Focus Area Mode** – What are you prepping for?
+   - Semester Exam Preparation
+   - Placement Drive & Interview Prep
+   - Company Switching & Career Growth
+
+3. **Your Syllabus/Prep Completion (%)** – Drag the slider to show how far along you are
+   - The progress bar updates in real-time
+   - Get a warning if you're under 50% (time to hustle!)
+   - Get a celebration if you're over 80% (almost there!)
+
+4. **Wipe Chat History** – Start fresh with a blank slate anytime
+
+### Asking Questions
+
+Just type in the chat input at the bottom. Some example questions:
+
+- "I have Data Structures exam in 2 weeks, create a study roadmap"
+- "What are typical Amazon round 2 questions?"
+- "I want to switch from QA to DevOps, what skills do I need?"
+- "Explain the difference between SQL and NoSQL with examples"
+
+The AI will give you a detailed answer + a visual flowchart showing the process or timeline.
+
+### What Happens Behind the Scenes
+
+1. You ask a question
+2. The app sends it to Google's Gemini AI (along with your prep level and focus area)
+3. Gemini thinks about it and generates:
+   - A detailed, structured answer
+   - A Mermaid flowchart diagram (automatically!)
+4. SkillYatra strips out the diagram code and renders it visually
+5. You see the answer + a beautiful diagram, all in one place
+
+Pretty seamless, right?
+
+## The Tech Stack (For the Nerds 👨‍💻)
+
+- **[Streamlit](https://streamlit.io)** – Makes building web apps super easy
+- **[Google Generative AI](https://ai.google.dev)** – The Gemini 2.5 Flash brain
+- **[Mermaid.js](https://mermaid.js.org)** – Draws the flowcharts
+- **Python 3.10+** – The glue holding it all together
+
+## Project Structure
+
+Spoiler: it's simple! Just one powerful Python file:
+
+```
+Microsoft/
+├── app.py           # Everything in here (yeah, one file!)
+├── requirements.txt # What you need to install
+├── README.md        # This file
+└── .git/            # Git history
+```
+
+## Troubleshooting (When Things Go Sideways 🤔)
+
+### "I see a 404 error"
+**Probably:** Your Gemini API key is invalid or your account doesn't have access
+**Fix:** Double-check your API key at [aistudio.google.com](https://aistudio.google.com), make sure it's copied correctly
+
+### "The flowchart isn't showing up"
+**Probably:** The AI response didn't include a valid Mermaid block
+**Fix:** Try asking a question that asks for a roadmap or process (e.g., "Create an interview prep timeline")
+
+### "It keeps asking for my API key"
+**Probably:** You pasted it wrong or there are extra spaces
+**Fix:** Clear the input field and paste it carefully (no extra spaces at the start/end)
+
+### "The app crashed / won't start"
+**Probably:** Dependencies not installed
+**Fix:** Run `pip install -r requirements.txt` again
+
+### "I can't connect to Gemini"
+**Probably:** Network issue or Gemini API is temporarily down
+**Fix:** Check your internet connection, wait a minute, and try again
+
+Still stuck? Open an issue on [GitHub](https://github.com/Dhilli-prasad/Microsoft/issues)!
+
+## Want to Contribute? 🤝
+
+This app is open-source, so contributions are welcome! Here's how:
+
+1. Fork the repo
+2. Create a new branch (`git checkout -b feature/awesome-idea`)
+3. Make your changes and test them locally
+4. Commit them (`git commit -m "Add awesome feature"`)
+5. Push to your fork (`git push origin feature/awesome-idea`)
+6. Open a Pull Request!
+
+We'd love to hear your ideas for new features.
+
+## License
+
+MIT License – basically, do whatever you want with this code, just give credit where it's due.
+
+## Let's Connect 👋
+
+- **Questions?** Open an issue on [GitHub](https://github.com/Dhilli-prasad/Microsoft/issues)
+- **Want to chat?** Feel free to reach out with feedback or ideas
+- **Found a bug?** Report it! We'll fix it ASAP
+
+---
+
+## TL;DR – Just Get Started!
+
+```bash
+# 1. Clone it
+git clone https://github.com/Dhilli-prasad/Microsoft.git
+cd Microsoft
+
+# 2. Set it up
+python -m venv .venv
+.venv\Scripts\activate  # On Windows
+pip install -r requirements.txt
+
+# 3. Run it
+streamlit run app.py
+
+# 4. Open http://localhost:8501 in your browser
+
+# 5. Paste your Gemini API key (free from aistudio.google.com)
+
+# 6. Start chatting and get better at your career!
+```
+
+**That's it!** Welcome to SkillYatra AI. Now go crush those exams, nail those interviews, or plan that career move. You got this! 💪
